@@ -6610,7 +6610,8 @@ a.list-item {
     align-items: stretch;
     display: flex;
     min-height: 3.25rem;
-    width: 90%
+    max-width: 1200px;
+    width: 100%
 }
 
 .navbar.has-shadow {
