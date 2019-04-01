@@ -11074,7 +11074,7 @@ hr {
 }
 
 .is-page-title .hero-body {
-    padding-bottom: 0
+    padding-top: 0
 }
 
 .is-page-title .hero-body .subtitle {
@@ -11533,6 +11533,38 @@ footer .social-icons {
         margin: 0 auto 3.5rem
     }
 }
+
+.is-bottom {
+    padding-bottom: 6rem;
+}
+
+@media (max-width:629px) {
+    .is-bottom {
+        display: none;
+    }
+    .section {
+        display: none;
+    }
+    .hero-foot {
+        display: none;
+    }
+    .call-to-action  {
+        display: block;
+    }
+    .is-small  {
+        display: block;
+    }
+    .is-primary {
+        display: block;
+    }
+    .contact-button {
+        display: block;
+    }
+    .testimonials  {
+        display: block;
+    }
+
+  }
 
 footer .social-icons a.button {
     background-color: transparent;
