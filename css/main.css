@@ -2040,6 +2040,14 @@ a.box:active {
     color: #8C43FF
 }
 
+.button.is-primary.is-outlined.reverse {
+    background-color: #8C43FF;;
+    border-color: #8C43FF;
+    color: white;
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
 .button.is-primary.is-outlined:hover, .button.is-primary.is-outlined:focus {
     background-color: #8C43FF;
     border-color: #8C43FF;
@@ -10898,7 +10906,7 @@ a:hover {
 }
 
 .button.is-outlined {
-    border-width: 2px
+    border-width: 3px
 }
 
 .has-border-top {
@@ -11025,7 +11033,9 @@ hr {
 }
 
 .hero {
-    padding-top: 0rem
+    padding-top: 0rem;
+    /* height: 100vh; */
+    flex: 1;
 }
 
 .hero.is-white .title {
