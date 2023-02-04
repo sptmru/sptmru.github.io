@@ -4,9 +4,9 @@
 
 title: Всякое о JS на бэкенде
 first_name: Soslan
-# middle_name:
+middle_name: K.
 last_name: Aldatov
-email: me@sptm.ddev
+email: me@sptm.dev
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Меня зовут Сослан, и это мой личный сайт. Вообще, он создан, чтоб постить сюда всякое о Node.js и бэкенде в целом.
 footer_text: >
