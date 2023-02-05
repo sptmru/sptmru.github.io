@@ -1,6 +1,6 @@
 ---
 layout: page
-title: обо мне
+title: главная
 permalink: /
 description: здесь немного информации обо мне.
 nav: true
