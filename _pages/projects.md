@@ -1,8 +1,8 @@
 ---
 layout: page
-title: projects
+title: проекты
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Мои проекты и проекты моих учеников. Пока здесь пусто — но это временно.
 nav: true
 nav_order: 2
 display_categories: [work, fun]
