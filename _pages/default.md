@@ -5,17 +5,14 @@ permalink: /
 description: здесь немного информации обо мне.
 nav: true
 nav_order: 1
-subtitle: Бронировать созвон тут: <a href="https://sptm.dev/meetme target = _blank >https://sptm.dev/meetme</a>. Email: me@sptm.dev.
+---
 
-profile:
-align: right
-image: prof_pic.jpg
-image_circular: false # crops the image to make it circular
-address: >
-<p>linkedin: <a href="https://www.linkedin.com/in/sptm/ target=_blank </p>
-<p>gmail: soslanaldatov@gmail.com</p>
-<p>локация: Тбилиси, Грузия</p>
+<!-- pages/default.md -->
+
+Меня зовут Сослан, и я — бэкенд-разработчик с двенадцатилетним опытом, из них последние семь-восемь лет я в основном пишу на Node.js.
+Здесь я рассказываю о Node.js и всяком о бэкенде — теория, базы данных, очереди сообщений, облака и прочем таком.
+
+Вот мой [LinkedIn](https://www.linkedin.com/in/sptm/), писать мне можно на [gmail](mailto:soslanaldatov@gmail.com) или в [telegram](https://t.me/sptmru).
 
 news: true  # includes a list of news items
-selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
