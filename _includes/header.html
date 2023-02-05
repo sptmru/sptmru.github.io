@@ -60,7 +60,6 @@
               {%- for p in sorted_pages -%}
               {%- if p.nav and p.autogen == nil -%}
               {%- if p.dropdown %}
-              {%- if page.permalink != '/projects' -%}
               <li class="nav-item dropdown {% if page.title == p.title %}active{% endif %}">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ p.title }}
                   {%- if page.title == p.title -%}
@@ -85,7 +84,6 @@
                   {%- endif -%}
                 </a>
               </li>
-              {%- endif -%}
               {%- endif -%}
               {%- endif -%}
               {% endfor -%}
