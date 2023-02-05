@@ -3,9 +3,9 @@
 # -----------------------------------------------------------------------------
 
 title: Всякое о JS на бэкенде
-first_name: Soslan
-middle_name: K.
-last_name: Aldatov
+first_name: Сослан
+middle_name: Х.
+last_name: Алдатов
 email: me@sptm.dev
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Меня зовут Сослан, и это мой личный сайт. Вообще, он создан, чтоб постить сюда всякое о Node.js и бэкенде в целом.
@@ -21,7 +21,7 @@ icon: ⚛️  # the emoji used as the favicon (alternatively, provide image name
 url: https://sptmru.github.io # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/
 last_updated: false # set to true if you want to display last updated in the footer
-impressum_path:  # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
+impressum_path:  # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR5
 
 # -----------------------------------------------------------------------------
 # Theme
@@ -115,7 +115,7 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Разное о Node.js и о всяких бэкенд-штуках # blog_name will be displayed in your blog page
-blog_nav_title: blog # your blog must have a title for it to be displayed in the nav bar
+blog_nav_title: блог # your blog must have a title for it to be displayed in the nav bar
 permalink: /:year/:title/
 
 # Pagination
@@ -213,7 +213,7 @@ defaults:
   - scope:
       path: "assets/**/*.*"
     values:
-      sitemap: false
+      sitemap: true
 
 # -----------------------------------------------------------------------------
 # Jekyll Minifier
@@ -247,8 +247,8 @@ display_tags: ['formatting', 'images', 'links', 'math', 'code'] # this tags will
 
 scholar:
 
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Алдатов]
+  first_name: [Сослан]
 
   style: apa
   locale: en
@@ -336,7 +336,7 @@ enable_math:                true   # enables math typesetting (uses MathJax)
 enable_tooltips:            false  # enables automatic tooltip links generated
                                    # for each section titles on pages and posts
 enable_darkmode:            true   # enables switching between light/dark modes
-enable_navbar_social:       false  # enables displaying social links in the
+enable_navbar_social:       true  # enables displaying social links in the
                                    # navbar on the about page
 enable_project_categories:  true   # enables categorization of projects into
                                    # multiple categories
