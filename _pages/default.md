@@ -4,6 +4,7 @@ title: главная
 permalink: /
 description: здесь немного информации обо мне.
 nav: true
+nav_order: 1
 ---
 
 <!-- pages/default.md -->
