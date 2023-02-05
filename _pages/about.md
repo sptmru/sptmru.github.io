@@ -1,7 +1,7 @@
 ---
 layout: about
-title: about
-permalink: /
+title: обо мне
+permalink: ""
 subtitle: Бронировать созвон тут: <a href="https://sptm.dev/meetme target = _blank >https://sptm.dev/meetme</a>. Email: me@sptm.dev.
 
 profile:
