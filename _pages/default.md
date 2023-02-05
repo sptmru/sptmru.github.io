@@ -4,6 +4,7 @@ title: обо мне
 permalink: /
 description: здесь немного информации обо мне.
 nav: true
+nav_order: 1
 subtitle: Бронировать созвон тут: <a href="https://sptm.dev/meetme target = _blank >https://sptm.dev/meetme</a>. Email: me@sptm.dev.
 
 profile:
