@@ -3,7 +3,7 @@ layout: page
 title: главная
 permalink: /
 description: здесь немного информации обо мне.
-nav: false
+nav: true
 ---
 
 <!-- pages/default.md -->
