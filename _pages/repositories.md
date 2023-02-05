@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /repositories/
-title: Репозитории
+title: репозитории
 description: Тут можно поглядеть на какие-то из моих репозиториев.
 nav: true
 nav_order: 3
