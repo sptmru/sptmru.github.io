@@ -1,5 +1,5 @@
 ---
-layout: dynamicpage
+layout: post
 title:  "Асинхронность в JavaScript: практика и теория"
 date:   2023-02-03 15:31:43 +0400
 description: Статья об асинхронности в JS, V8, event loop и таком прочем
