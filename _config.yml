@@ -123,6 +123,8 @@ pagination:
   enabled: true
   posts_limit: 20
 
+paginate: 20
+
 related_blog_posts:
   enabled: true
   max_related: 20
