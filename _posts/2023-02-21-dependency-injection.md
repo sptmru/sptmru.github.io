@@ -2,7 +2,7 @@
 layout: post
 title:  "Inversion of Control и Dependency Injection — что и зачем. Максимально коротко."
 date:   2023-02-20 16:31:43 +0400
-desciption: Статья об IoC и DI — зачем, что это и как, все с примерами и предельно понятно.
+description: Статья об IoC и DI — зачем, что это и как, все с примерами и предельно понятно.
 tags: theory
 categories: theory
 
