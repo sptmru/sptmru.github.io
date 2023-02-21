@@ -122,6 +122,9 @@ permalink: /:year/:title/
 pagination:
   enabled: true
   per_page: 20
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
 
 
 related_blog_posts:
