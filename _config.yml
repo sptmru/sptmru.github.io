@@ -128,7 +128,7 @@ related_blog_posts:
   max_related: 20
 
 # Disqus comments (DEPRECATED)
-disqus_shortname: sptmdev # put your disqus shortname
+disqus_shortname: https-sptm-dev # put your disqus shortname
 layout: default
 comments: true
 
