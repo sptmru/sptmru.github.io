@@ -5,6 +5,8 @@ date:   2023-02-20 13:24:43 +0400
 description: Генераторы в JS — что это, зачем это и почему это красиво. Ну, и о монадах немного.
 tags: js
 categories: js
+disqus_comments: true
+related_posts: true
 
 ---
 

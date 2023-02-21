@@ -3,8 +3,8 @@ layout: post
 title:  "SOLID, GRASP и другие принципы разработки"
 date:   2023-02-07 08:30:43 +0400
 description: Статья о шаблонах и принципах проектирования — больше об ООП, чуть меньше о JS.
-tags: theory
-categories: theory
+tags: theory, js
+categories: theory, js
 
 ---
 

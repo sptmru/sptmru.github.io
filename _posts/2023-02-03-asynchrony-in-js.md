@@ -5,6 +5,8 @@ date:   2023-02-03 15:31:43 +0400
 description: Статья об асинхронности в JS, V8, event loop и таком прочем
 tags: js
 categories: javascript
+disqus_comments: true
+related_posts: true
 
 ---
 

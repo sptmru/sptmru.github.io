@@ -5,6 +5,8 @@ date:   2023-02-03 15:31:43 +0400
 description: Статья о реализации наследования в JS и всем, что с этим связано
 tags: js
 categories: javascript
+disqus_comments: true
+related_posts: true
 ---
 
 Очень популярный вопрос от моих менти, его задают стабильно:

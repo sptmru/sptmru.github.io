@@ -5,6 +5,8 @@ date:   2023-02-20 16:31:43 +0400
 description: Статья об IoC и DI — зачем, что это и как, все с примерами и предельно понятно.
 tags: theory
 categories: theory
+disqus_comments: true
+related_posts: true
 
 ---
 
