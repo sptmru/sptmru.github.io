@@ -119,11 +119,10 @@ blog_nav_title: блог # your blog must have a title for it to be displayed in
 permalink: /:year/:title/
 
 # Pagination
-#pagination:
-#  enabled: true
-#  posts_limit: 20
+pagination:
+  enabled: true
+  per_page: 20
 
-paginate: 20
 
 related_blog_posts:
   enabled: true
@@ -195,7 +194,7 @@ plugins:
   - jekyll-feed
   - jekyll-imagemagick
   - jekyll-minifier
-  - jekyll-paginate
+  - jekyll-paginate-v2
   - jekyll/scholar
   - jekyll-sitemap
   - jekyll-link-attributes
