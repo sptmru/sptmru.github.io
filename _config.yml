@@ -120,7 +120,7 @@ permalink: /:year/:title/
 
 # Pagination
 pagination:
-  enabled: false
+  enabled: true
 
 # Disqus comments (DEPRECATED)
 disqus_shortname: sptmdev # put your disqus shortname
