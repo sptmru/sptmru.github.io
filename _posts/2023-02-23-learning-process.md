@@ -3,8 +3,8 @@ layout: post
 title:  "Учиться — скучно, сложно, неинтересно? Дичь и пиздеж!"
 date:   2023-02-21 17:10:43 +0400
 description: Статья о том, как правильно и с кайфом учиться.
-tags: other
-categories: other
+tags: other, js, mq
+categories: other, js, mq
 disqus_comments: true
 related_posts: true
 
