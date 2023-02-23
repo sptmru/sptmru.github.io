@@ -1,14 +1,14 @@
----
-layout: post
-title:  "Proxy и Reflect — зачем и когда?"
-date:   2023-02-21 11:10:43 +0400
-description: Статья о встроенных в JS монадических штуках, о которых мало кто знает — Proxy и Reflect
-tags: js
-categories: js
-disqus_comments: true
-related_posts: true
-
----
+    ---
+    layout: post
+    title:  "Proxy и Reflect — зачем и когда?"
+    date:   2023-02-21 11:10:43 +0400
+    description: Статья о встроенных в JS монадических штуках, о которых мало кто знает — Proxy и Reflect
+    tags: js
+    categories: js
+    disqus_comments: true
+    related_posts: true
+    
+    ---
 
 ## Введение
 
@@ -53,7 +53,16 @@ console.log(proxy.profession);
 
 ```ts
 let strings = [];
-strings = new Proxy(strings, {var
+strings = new Proxy(strings, {
+    set(target, prop, val) {
+        if (typeof val == 'string') {
+            target[prop] = val;
+            return true;
+        } else {
+            return false;
+        }
+    }
+});
 
 
 strings.push(1); // true;
