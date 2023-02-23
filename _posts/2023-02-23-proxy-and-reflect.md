@@ -53,14 +53,14 @@ console.log(proxy.profession);
 
 ```ts
 let strings = [];
-strings = new Proxy(strings, {
-    set(target, prop, val) {
-        if (typeof val == 'string') {
-            target[prop] = val;
-            return true;
-        } else {
-            return false;
-        }
+strings = new Proxy(strings, { 
+  set(target, prop, val) { 
+      if (typeof val == 'string') {
+        target[prop] = val;
+        return true;
+      } else {
+        return false;
+      }
     }
 });
 
