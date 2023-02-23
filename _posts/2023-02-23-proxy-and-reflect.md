@@ -65,7 +65,7 @@ strings = new Proxy(strings, {
 });
 
 
-strings.push(1); // true;
+strings.push('string'); // true;
 console.log(strings); [ 'string' ] // строка добавилась в массив
 
 strings.push(1); // TypeError
