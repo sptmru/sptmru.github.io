@@ -2,7 +2,7 @@
 layout: post
 title:  "Управление памятью в JS"
 date:   2023-02-26 20:10:43 +0400
-description: Статья об управлению памятью в JavaScript: то, что часто остается незаметным
+description: Статья о cборке мусора в JavaScript — то, что часто остается незаметным
 tags: js
 categories: js
 disqus_comments: true
