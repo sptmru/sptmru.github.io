@@ -29,3 +29,5 @@ nav_order: 1
 Вот мой [LinkedIn](https://www.linkedin.com/in/sptm/), писать мне можно на [gmail](mailto:soslanaldatov@gmail.com) или в [telegram](https://t.me/sptmru).
 А еще можно забронировать созвон со мной [здесь](https://sptm.dev/meetme).
 И еще у меня есть [канал в Telegram](https://t.me/backend_js_and_stuff) (осторожно, шитпост и мрак).
+
+А задонатить мне можно [здесь](https://sptm.dev/donation).
