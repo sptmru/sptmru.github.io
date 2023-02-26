@@ -30,4 +30,4 @@ nav_order: 1
 А еще можно забронировать созвон со мной [здесь](https://sptm.dev/meetme).
 И еще у меня есть [канал в Telegram](https://t.me/backend_js_and_stuff) (осторожно, шитпост и мрак).
 
-А задонатить мне можно [здесь](https://sptm.dev/donation).
+А, если вдруг [мой блог](https://sptm.dev/blog) или [менторство](https://sptm.dev/teaching) вам были полезны и вы хотите меня отблагодарить, задонатить мне можно [здесь](https://sptm.dev/donation).
