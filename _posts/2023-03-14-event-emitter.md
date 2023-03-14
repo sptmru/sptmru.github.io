@@ -37,7 +37,6 @@ const eventEmitter = new EventEmitter();
 
 eventEmitter.emit('eventName', ...args);
 
-eve
 ```
 
 ### Обработка события
