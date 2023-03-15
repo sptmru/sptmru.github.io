@@ -4,7 +4,7 @@ permalink: /crypto/
 title: крипта: FAQ
 description: Немного о том, как я менторю.
 nav: true
-nav_order: 4
+nav_order: 5
 ---
 
 Этот пост — не для тех, кто разбирается или хочет разобраться с криптой в целом.
