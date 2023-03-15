@@ -4,7 +4,7 @@ permalink: /teaching/
 title: менторинг
 description: Немного о том, как я менторю.
 nav: true
-nav_order: 2
+nav_order: 3
 ---
 Да, я занимаюсь менторингом на некоммерческой основе. [Эту форму](https://docs.google.com/forms/d/e/1FAIpQLSdvS3xFFiPOJuU3GEfQ1gQibpYLarMXca1vaKQA9AnLE-LTVg/viewform) можно использовать для записи в группу, где я по-всякому менторю ребят-начинающих бэкенд-разработчиков на Node.js.
 

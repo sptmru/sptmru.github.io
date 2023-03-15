@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /crypto/
-title: крипта для новичков
+title: крипта: FAQ
 description: Немного о том, как я менторю.
 nav: true
 nav_order: 4
