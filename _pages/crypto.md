@@ -2,7 +2,7 @@
 layout: page
 permalink: /crypto/
 title: крипта
-description: Немного о том, как я менторю.
+description: Статья для новичков в крипте.
 nav: true
 nav_order: 5
 ---

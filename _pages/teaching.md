@@ -2,7 +2,7 @@
 layout: page
 permalink: /teaching/
 title: менторинг
-description: Немного о том, как я менторю.
+description: Немного о процессе менторства.
 nav: true
 nav_order: 3
 ---
