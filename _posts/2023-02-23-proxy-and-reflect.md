@@ -3,8 +3,8 @@ layout: post
 title:  "Proxy и Reflect — зачем и когда?"
 date:   2023-02-21 11:10:43 +0400
 description: Статья о встроенных в JS монадических штуках, о которых мало кто знает — Proxy и Reflect
-tags: js
-categories: js
+tags: [ 'js' ]
+categories: [ 'javascript' ]
 disqus_comments: true
 related_posts: true
 

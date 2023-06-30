@@ -3,8 +3,8 @@ layout: post
 title:  "Как и зачем писать тесты?"
 date:   2023-03-10 06:40:43 +0400
 description: Статья о тестировании наших приложений, его видах, преимуществах и недостатках каждого.
-tags: js, theory
-categories: js, theory
+tags: [ 'js', 'theory' ]
+categories: [ 'javascript', 'theory' ]
 disqus_comments: true
 related_posts: true
 

@@ -3,8 +3,8 @@ layout: post
 title:  "Профилирование Node.js-приложений"
 date:   2023-03-09 18:40:43 +0400
 description: Статья о профилировании и оптимизации Node.js-приложений.
-tags: js
-categories: js
+tags: [ 'js' ]
+categories: [ 'javascript' ]
 disqus_comments: true
 related_posts: true
 

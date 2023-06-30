@@ -3,8 +3,8 @@ layout: post
 title:  "Реактивное программирование: теория и практика"
 date:   2023-03-12 01:20:43 +0400
 description: Статья о реактивном программировании с примерами на Node.js Streams.
-tags: js, mq, theory
-categories: js, mq, theory
+tags: [ 'js', 'mq', 'theory' ]
+categories: [ 'javascript', 'mq', 'theory' ]
 disqus_comments: true
 related_posts: true
 

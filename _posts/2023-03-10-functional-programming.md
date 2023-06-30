@@ -3,8 +3,8 @@ layout: post
 title:  "Функциональное программирование. Что это и зачем?"
 date:   2023-03-10 06:40:43 +0400
 description: Статья о функциональном программировании, его преимуществах и некоторых его подвидах.
-tags: js, theory
-categories: js, theory
+tags: [ 'js', 'theory' ]
+categories: [ 'javascript', 'theory' ]
 disqus_comments: true
 related_posts: true
 

@@ -3,8 +3,8 @@ layout: post
 title:  "Событийно-ориентированная архитектура и Node.js Events"
 date:   2023-03-14 06:50:43 +0400
 description: Статья о cобытийно-ориентированной архитектуре, EventEmitter и вот обо всем об этом.
-tags: js, theory
-categories: js, theory
+tags: [ 'js', 'theory' ]
+categories: [ 'javascript', 'theory' ]
 disqus_comments: true
 related_posts: true
 

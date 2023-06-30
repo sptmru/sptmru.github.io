@@ -3,8 +3,8 @@ layout: post
 title:  "Как работает HTTP: разбор в деталях"
 date:   2023-02-06 22:20:43 +0400
 description: Статья об HTTP, HTTP/2, HTTPS и вот этом всем
-tags: theory
-categories: theory
+tags: [ 'theory' ]
+categories: [ 'theory' ]
 disqus_comments: true
 related_posts: true
 ---

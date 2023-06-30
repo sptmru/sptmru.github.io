@@ -3,8 +3,8 @@ layout: post
 title:  "Контекст выполнения функции (this) в JS"
 date:   2023-02-03 15:31:43 +0400
 description: Статья о this в JavaScript, и обо всем, что с этим связано
-tags: js
-categories: javascript
+tags: [ 'js' ]
+categories: [ 'javascript' ]
 disqus_comments: true
 related_posts: true
 ---

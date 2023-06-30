@@ -3,8 +3,8 @@ layout: post
 title:  "Inversion of Control и Dependency Injection — что и зачем. Максимально коротко."
 date:   2023-02-20 16:31:43 +0400
 description: Статья об IoC и DI — зачем, что это и как, все с примерами и предельно понятно.
-tags: theory
-categories: theory
+tags: [ 'theory' ]
+categories: [ 'theory' ]
 disqus_comments: true
 related_posts: true
 
@@ -68,10 +68,10 @@ class Car {
     this.transmission = transmission;
     this.chassis = chassis;
   }
-
-  const car = new Car(new Engine(), new Transmission(), new Chassis());
-  const electroCar = new Car(new ElectroEngine(), new ElectroTransmission(), new ElectroChassis());
 }
+
+const car = new Car(new Engine(), new Transmission(), new Chassis());
+const electroCar = new Car(new ElectroEngine(), new ElectroTransmission(), new ElectroChassis());
 ```
 
 Гораздо удобнее, правда? Связность уменьшилась: теперь `Car` не зависит напрямую от каких-то классов — мы сами решаем, что в него прокинуть. Это и есть Inversion of Control, реализованная с помощью Dependency Injection.

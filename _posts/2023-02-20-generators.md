@@ -3,8 +3,8 @@ layout: post
 title:  "Генераторы в JS — что это, зачем это и почему это красиво"
 date:   2023-02-20 13:24:43 +0400
 description: Генераторы в JS — что это, зачем это и почему это красиво. Ну, и о монадах немного.
-tags: js
-categories: js
+tags: [ 'js' ]
+categories: [ 'javascript' ]
 disqus_comments: true
 related_posts: true
 
@@ -48,7 +48,7 @@ const generator = generateNumberSequence();
 ```ts
 {
   value, // значение из yield
-  done, // true, если генератор полностью выполнен, в ином случае false
+  done // true, если генератор полностью выполнен, в ином случае false
 }
 ```
 
@@ -163,10 +163,9 @@ function* inputGen() {
 
 const gen = inputGen();
 
-console.log(gen.next().value) // awaiting something from the outside
-console.log(gen.next('something').value) // something
-console.log(gen.next().value) // SOMETHING
-}
+console.log(gen.next().value); // awaiting something from the outside
+console.log(gen.next('something').value); // something
+console.log(gen.next().value); // SOMETHING
 ```
 
 Видите? Мы передали что-то в next, в генераторе сохранили это в result и применили к нему `.toUpperCase()`. Таким образом, генератор — это не просто прокачанный перебираемый объект, это нечто гораздо более функциональное.

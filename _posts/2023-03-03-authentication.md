@@ -3,8 +3,8 @@ layout: post
 title:  "Аутентификация, авторизация, идентификация и прочие сложные слова"
 date:   2023-03-03 20:10:43 +0400
 description: Статья об аутентификации, авторизации и идентификации.
-tags: theory, other
-categories: theory, other
+tags: [ 'theory', 'other' ]
+categories: [ 'theory', 'other' ]
 disqus_comments: true
 related_posts: true
 

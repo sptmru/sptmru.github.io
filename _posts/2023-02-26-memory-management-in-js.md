@@ -3,8 +3,8 @@ layout: post
 title:  "Управление памятью в JS"
 date:   2023-02-26 20:10:43 +0400
 description: Статья о cборке мусора в JavaScript — то, что часто остается незаметным
-tags: js
-categories: js
+tags: [ 'js' ]
+categories: [ 'javascript' ]
 disqus_comments: true
 related_posts: true
 

@@ -3,8 +3,8 @@ layout: post
 title:  "Микросервисы или монолит?"
 date:   2023-03-05 10:28:43 +0400
 description: Статья о микросервисах и монолитах, преимуществах и недостатках.
-tags: theory, other
-categories: theory, other
+tags: [ 'theory', 'other' ]
+categories: [ 'theory', 'other' ]
 disqus_comments: true
 related_posts: true
 
