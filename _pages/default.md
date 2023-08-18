@@ -12,7 +12,7 @@ nav_order: 1
 
 Здесь я рассказываю о Node.js и всяком о бэкенде — теория, базы данных, очереди сообщений, облака и прочее такое.
 
-Hу и да, я занимаюсь [бесплатным менторингом](https://sptm.dev/teaching/) Node.js-разработчиков. Записывайтесь!
+Hу и да, я занимаюсь [менторингом](https://sptm.dev/teaching/) Node.js-разработчиков. Записывайтесь!
 
 Вот мой [LinkedIn](https://www.linkedin.com/in/sptm/), писать мне можно на [gmail](mailto:soslanaldatov@gmail.com) или в [telegram](https://t.me/sptmru).
 Подписывайтесь на мой [Twitter](https://twitter.com/sptmru), [Boosty](https://boosty.to/sptm) и <a rel="me" href="https://mastodon.social/@sptm">Mastodon</a>.
