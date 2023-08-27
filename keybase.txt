@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/sptm_dev
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://sptm.dev
+  * I am sptm_dev (https://keybase.io/sptm_dev) on keybase.
+  * I have a public key ASDgE8v7waVuHPGxEQvHzswCjtgXv8lCKxLOjSmzGt5wuQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120e013cbfbc1a56e1cf1b1110bc7cecc028ed817bfc9422b12ce8d29b31ade70b90a",
+      "host": "keybase.io",
+      "kid": "0120e013cbfbc1a56e1cf1b1110bc7cecc028ed817bfc9422b12ce8d29b31ade70b90a",
+      "uid": "38a757e69c267cd7df75d68e1c229319",
+      "username": "sptm_dev"
+    },
+    "merkle_root": {
+      "ctime": 1693158332,
+      "hash": "4554a5134ae5dae5bef9aa9da8b29b0748d9639d4647849f0fe11c07308733308044d7b187359003a07dcfa786b075547ea524ba5c29e9b877c9c94b5b010b17",
+      "hash_meta": "444a4ef57c05e9c844db722acd8390f295d130fa1f13b16d61b2e437071f72ce",
+      "seqno": 24857092
+    },
+    "service": {
+      "entropy": "LGFDC9BNp3TAtT8RJ6ycw4vw",
+      "hostname": "sptm.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.2.1"
+  },
+  "ctime": 1693158370,
+  "expire_in": 504576000,
+  "prev": "f5caa70cf9527c700a0cfb80f97e8991639b2bdae48bde3196d62a2641b282b9",
+  "seqno": 6,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg4BPL+8GlbhzxsRELx87MAo7YF7/JQisSzo0psxrecLkKp3BheWxvYWTESpcCBsQg9cqnDPlSfHAKDPuA+X6JkWObK9rki94xltYqJkGygrnEIME8U6uGWjJeE/kNAtZ1o2R4w4KW4EMsiHDeLim2mQW0AgHCo3NpZ8RAUN0etIarIOP350IM0ZDq3z9W/XLiBGB6UAYREXGstL1wiYwyoI5cgHlxBwCxKWyXeHDyq0B2RP+1U/XMsIE+D6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIK7utFPM+TZ7HaU58zLNEoL89rbvTH9goVWylkpGe8tGo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/sptm_dev
+
+==================================================================
