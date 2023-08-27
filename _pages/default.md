@@ -16,6 +16,6 @@ Hу и да, я занимаюсь [менторингом](https://sptm.dev/tea
 
 Вот мой [LinkedIn](https://www.linkedin.com/in/sptm/), писать мне можно на [gmail](mailto:soslanaldatov@gmail.com) или в [telegram](https://t.me/sptmru).
 Подписывайтесь на мой [Twitter](https://twitter.com/sptmru), [Boosty](https://boosty.to/sptm) и <a rel="me" href="https://mastodon.social/@sptm">Mastodon</a>.
-А еще можно забронировать созвон со мной [здесь](https://sptm.dev/meetme).
+А еще можно забронировать созвон со мной [здесь](https://sptm.dev/meetme). [Тут](https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x4bbf79fd68e9952b) доступен мой публичный GPG-ключ.
 
 Если вдруг [мой блог](https://sptm.dev/blog) или [менторство](https://sptm.dev/teaching) вам были полезны и вы хотите меня отблагодарить, задонатить мне можно [здесь](https://sptm.dev/donation). Спасибо!
