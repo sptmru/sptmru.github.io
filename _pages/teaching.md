@@ -2,7 +2,7 @@
 layout: page
 permalink: /teaching/
 title: менторинг
-nav: true
+nav: false
 nav_order: 3
 ---
 Да, я занимаюсь менторингом (Node.js). [Эту форму](https://docs.google.com/forms/d/e/1FAIpQLSdvS3xFFiPOJuU3GEfQ1gQibpYLarMXca1vaKQA9AnLE-LTVg/viewform) можно использовать для записи в группу, где я по-всякому менторю ребят-начинающих бэкенд-разработчиков на Node.js.
