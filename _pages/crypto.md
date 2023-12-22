@@ -2,7 +2,7 @@
 layout: page
 permalink: /crypto/
 title: крипта
-nav: true
+nav: false
 nav_order: 5
 ---
 
