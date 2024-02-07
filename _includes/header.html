@@ -127,6 +127,14 @@
                     {% endif %}
                   </li>
 
+                  <li class="nav-item{% if site.lang == 'en' %} active{% endif %}">
+                    <a class="nav-link" href="/">eng</a>
+                  </li> /
+                  <li class="nav-item{% if site.lang == 'ru' %} active{% endif %}">
+                    <a class="nav-link" href="/ru/">rus</a>
+                  </li>
+                  <li class="nav-item active"
+        
                   {%- if site.enable_darkmode %}
 
                   <!-- Toogle theme mode -->
