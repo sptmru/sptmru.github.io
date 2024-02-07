@@ -3,18 +3,17 @@
 # -----------------------------------------------------------------------------
 
 title: global.title
-first_name: Сослан
+first_name: global.first_name
 # middle_name:
-last_name: Алдатов
+last_name: global.last_name
 email: soslanaldatov@gmail.com
-description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Меня зовут Сослан, и это мой личный сайт. Вообще, он создан, чтоб постить сюда всякое о Node.js и бэкенде в целом.
+description: global.description
 footer_text: >
   Лежит на <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Бронируйте встречи на <a href="https://sptm.dev/meetme" target="_blank">моем Fantastical Openings</a>.
   Фото стянуты в том числе из <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: sptm, sptmru, Soslan Aldatov, Node.js, JavaScript, backend, mentor, mentoring # add your own keywords or leave empty
-lang: ru # the language of your site (for example: en, fr, cn, ru, etc.)
+keywords: sptm, sptmru, Soslan Aldatov, Node.js, JavaScript, backend, VoIP, Asterisk, FreeSWITCH, Kamailio, OpenSIPs, Drachtio # add your own keywords or leave empty
+lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 languages: ["en", "ru"]
@@ -70,7 +69,7 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # -----------------------------------------------------------------------------
 
 github_username: sptmru # sptmru
-gitlab_username: # your GitLab user name
+gitlab_username: sptmru
 twitter_username: sptmru # your Twitter handle
 mastodon_username: mastodon.social/@sptm # your mastodon instance+username in the format mastodon.social/@sptm
 linkedin_username: sptm # your LinkedIn user name
@@ -244,8 +243,8 @@ display_tags: ["js", "db", "theory", "mq", "other"] # this tags will be dispalye
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Алдатов]
-  first_name: [Сослан]
+  last_name: [Aldatov]
+  first_name: [Soslan]
 
   style: apa
   locale: en

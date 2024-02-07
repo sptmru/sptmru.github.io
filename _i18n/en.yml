@@ -2,6 +2,9 @@ global:
   russian: Russian
   english: English
   title: Soslan Aldatov | Freelance VoIP expert
+  first_name: Soslan
+  last_name: Aldatov
+  description: Soslan Aldatov, freelance software engineer and VoIP expert
 short:
   russian: rus
   english: eng
