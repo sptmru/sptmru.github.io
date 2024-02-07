@@ -23,8 +23,8 @@
     if page.url == '/blog/index.html' %} {{ site.blog_nav_title }} | {{ title }}
     {%- elsif page.title != "blank" and page.url != "/" -%} {%- if page.title ==
     nil or page.title == "" -%} {{ page.date | date: "%Y" }} | {{ title }} {%-
-    else -%} {{ page.title }} | {{ title }} {%- endif -%} {%- else -%} {{ title
-    }} {%- endif -%}
+    else -%} {% t page.title %} | {{ title }} {%- endif -%} {%- else -%} {{
+    title }} {%- endif -%}
 </title>
 <meta
     name="author"
