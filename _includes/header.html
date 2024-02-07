@@ -87,7 +87,7 @@
                     </li>
                     {%- endif -%} {%- endif -%} {% endfor -%}
 
-                    {% if site.lang == "ru" %} {% capture link1 %}/ru/blog/
+                    {% if site.lang == "ru" %} {% capture link1 %}/ru/blog/{% endcapture %}
                     <li class="nav-item {% if page.title == p.title %}active{% endif %}" <a class="nav-link"
                         href="{{ link1 }}">{% t site.blog_nav_title %}
                         <span class="sr-only">(current)</span>
