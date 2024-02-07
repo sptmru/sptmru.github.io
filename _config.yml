@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: site.title
+title: global.title
 first_name: Сослан
 # middle_name:
 last_name: Алдатов
