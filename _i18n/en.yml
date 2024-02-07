@@ -5,6 +5,10 @@ pages:
   home: home
   cv: cv
   blog: blog
+titles:
+  home: home
+  cv: cv
+  blog: blog
 cv:
   title: Info
   name:

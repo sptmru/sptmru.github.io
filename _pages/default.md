@@ -1,6 +1,6 @@
 ---
 layout: page
-title: pages.home
+title: titles.home
 permalink: /
 nav: true
 nav_order: 1
