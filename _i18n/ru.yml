@@ -9,6 +9,8 @@ titles:
   home: главная
   cv: cv
   blog: блог
+footer:
+  text: По любым вопросам пишите на <a href="mailto:soslanaldatov@gmail.com">soslanaldatov@gmail.com</a> — я буду рад вам помочь!
 cv:
   title: Информация
   name:

@@ -9,6 +9,8 @@ titles:
   home: home
   cv: cv
   blog: blog
+footer:
+  text: Feel free to shoot me an email (<a href="mailto:soslanaldatov@gmail.com">soslanaldatov@gmail.com</a>) if you have any questions!
 cv:
   title: Info
   name:
