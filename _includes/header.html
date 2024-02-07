@@ -43,7 +43,6 @@
 
           <div class="navbar-collapse collapse text-right" id="navbarNav">
               <ul class="navbar-nav ml-auto flex-nowrap">
-                {% if site.lang == 'ru' %}
                   {%- for page in site.pages -%} {% if page.permalink == '/'
                   %} {% assign about_title = page.title %} {% endif %} {%
                   endfor %}
@@ -128,8 +127,6 @@
                       </a>
                     {% endif %}
                   </li>
-                  {% endif %}
-
                   {% endif %}
 
                   <li class="nav-item{% if site.lang == 'en' %} active{% endif %}">
