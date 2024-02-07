@@ -5,6 +5,7 @@ date:   2023-03-12 01:20:43 +0400
 description: Статья о реактивном программировании с примерами на Node.js Streams.
 tags: [ 'js', 'mq', 'theory' ]
 categories: [ 'javascript', 'mq', 'theory' ]
+languages: [ 'ru' ]
 disqus_comments: true
 related_posts: true
 
@@ -12,7 +13,7 @@ related_posts: true
 
 ## Введение
 
-Вообще, реактивное программирование — не самая сложная штука. 
+Вообще, реактивное программирование — не самая сложная штука.
 Поэтому я постарался сконцентрироваться на реальном его применении в Node.js, и поэтому здесь будет больше кода, чем текста :)
 
 ### Что такое реактивное программирование?
@@ -22,7 +23,7 @@ related_posts: true
 К тому же, получившийся пример вполне себе применим на практике.
 
 Вообще, Streams обычно используются для чтения и записи буферизированных данных (бинарных файлов и всего такого).
-Но, подумал я, что, если с помощью него работать с API? :) 
+Но, подумал я, что, если с помощью него работать с API? :)
 
 В примере мы читаем данные из настоящего API, получая данные порционно (имитируя пагинацию), и сохраняем их в массив.
 Понятное дело, что никто не мешает нам их обрабатывать и сохранять в базу, да и вообще делать с ними что угодно.
@@ -77,15 +78,15 @@ const handler: RouteHandlerMethod = async (req, _res) => {
   const limit  = Number(query?.limit) || 50;
 
   const finalNum = 10000;
-  
-  const end = (Number(offset) + Number(limit)) < finalNum 
+
+  const end = (Number(offset) + Number(limit)) < finalNum
     ? (Number(offset) + Number(limit))
     : finalNum;
-  
+
     for (let i = offset; i <= end; i++) {
       response.objects[i] = i;
     }
-  
+
   response.start = offset;
   response.end = end;
 
@@ -107,7 +108,7 @@ start();
 ```
 
 Как мы видим, оно включает в себя всего один эндпойнт, который может отдать объекты вида `[key: string]: number` и поддерживает пагинацию (то есть, мы можем указать, с какого и по какое число нам сгенерировать объекты).
-Есть и лимит: числа больше `10000` он не отдаст (сделано это для того, чтобы чтение из API всегда было конечно). 
+Есть и лимит: числа больше `10000` он не отдаст (сделано это для того, чтобы чтение из API всегда было конечно).
 Все, больше ничего интересного: все самое интересное — в клиенте.
 
 ### Клиент
@@ -162,7 +163,7 @@ class ApiReadable extends Readable {
     override async _read() {
         // заберем нужное количество данных из API
         const result = await this.getAPI();
-        
+
         // если данных нет, отдадим null во Writable — это сгенерит событие end
         if (!result) {
             this.push(null);
@@ -171,7 +172,7 @@ class ApiReadable extends Readable {
             // а если данные есть, пихнем их во Writable
             this.push(result.objects);
         }
-        
+
         // сместим пагинацию вперед
         this.offset = result.end > this.offset ? result.end + 1 : result.end;
     }
@@ -180,13 +181,13 @@ class ApiReadable extends Readable {
 class ObjWritable extends Writable {
 
     private dbArr: object[];
-    
+
     // конструктор принимает архив, в который будем пихать данные, полученные от Readable
     constructor(dbArr: object[]) {
         super({ highWaterMark: 5, objectMode: true });
         this.dbArr = dbArr;
     }
-    
+
     writeToObj(chunk: object) {
         this.dbArr.push(chunk);
     }

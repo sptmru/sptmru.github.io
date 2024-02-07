@@ -5,6 +5,7 @@ date:   2023-02-21 11:10:43 +0400
 description: Статья о встроенных в JS монадических штуках, о которых мало кто знает — Proxy и Reflect
 tags: [ 'js' ]
 categories: [ 'javascript' ]
+languages: [ 'ru' ]
 disqus_comments: true
 related_posts: true
 
@@ -53,8 +54,8 @@ console.log(proxy.profession);
 
 ```ts
 let strings = [];
-strings = new Proxy(strings, { 
-  set(target, prop, val) { 
+strings = new Proxy(strings, {
+  set(target, prop, val) {
       if (typeof val == 'string') {
         target[prop] = val;
         return true;
@@ -133,7 +134,7 @@ const stringsProxy = new Proxy(strings, {
     } catch (err) {
       console.log('поймали ошибочку', err);
     }
-    
+
   }
 });
 
@@ -150,4 +151,3 @@ console.log(strings); //{ val1: 'string'} — объект не изменилс
 ## Вывод
 
 Да, `Proxy` и `Reflect` непопулярны. Но они могут и промисы заменить, и генераторы, и вообще всякое могут. Кстати, `Reflect` и `Proxy` — вполне себе монадические структуры. О монадах — [здесь](https://sptm.dev/2023/monads-in.js/). Stay tuned!
-

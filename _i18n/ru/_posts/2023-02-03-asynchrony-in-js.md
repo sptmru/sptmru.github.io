@@ -5,6 +5,7 @@ date:   2023-02-03 15:31:43 +0400
 description: Статья об асинхронности в JS, V8, event loop и таком прочем
 tags: [ 'js' ]
 categories: [ 'javascript' ]
+languages: [ 'ru' ]
 disqus_comments: true
 related_posts: true
 
@@ -126,7 +127,7 @@ Promise.all([promise1, promise2, promise3])
 
 Promise.all([promise1, promise2, promise4])
   .then(() => console.log('fulfilled!'))
-  .catch(() => console.log('rejected!')); 
+  .catch(() => console.log('rejected!'));
   // nothing, Promise.all is still pending (for Promise.all to be resolved, all promises passed into it should be resolved)
 
 Promise.allSettled([promise1, promise2, promise3])
@@ -135,7 +136,7 @@ Promise.allSettled([promise1, promise2, promise3])
 
 Promise.allSettled([promise1, promise2, promise4])
   .then(() => console.log('fulfilled!'))
-  .catch(() => console.log('rejected!')); 
+  .catch(() => console.log('rejected!'));
   // nothing, Promise.allSettled is still pending (for Promise.allSettled to be resolved, all promises passed into it should be resolved)
 ```
 
@@ -170,7 +171,7 @@ async () => {
     const slicedBeef = await sliceBeef(beef);
     const cookedBeef = await cookBeef(slicedBeef);
     const servedBeef = await serveBeef(cookedBeef);
-    
+
     servedBeef ? console.log('Beef is served!') : console.log('Beef is not served!');
   } catch (err) {
     console.log(err);

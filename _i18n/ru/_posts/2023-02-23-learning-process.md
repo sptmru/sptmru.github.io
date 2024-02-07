@@ -5,6 +5,7 @@ date:   2023-02-21 17:10:43 +0400
 description: Статья о том, как правильно и с кайфом учиться.
 tags: [ 'js', 'other' ]
 categories: [ 'javascript', 'other' ]
+languages: [ 'ru' ]
 disqus_comments: true
 related_posts: true
 
@@ -43,5 +44,3 @@ related_posts: true
 ## Выводы
 
 А какие, к черту, выводы? Ебашь, и все получится. Только правильно ебашь, пожалуйста.
-
-

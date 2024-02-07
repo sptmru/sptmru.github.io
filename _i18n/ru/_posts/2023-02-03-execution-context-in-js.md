@@ -5,6 +5,7 @@ date:   2023-02-03 15:31:43 +0400
 description: Статья о this в JavaScript, и обо всем, что с этим связано
 tags: [ 'js' ]
 categories: [ 'javascript' ]
+languages: [ 'ru' ]
 disqus_comments: true
 related_posts: true
 ---
@@ -27,7 +28,7 @@ related_posts: true
 
 Если функция — это свойство объекта, то мы называем ее методом этого объекта. В таком случае this в этой функции — это этот самый объект. Все еще просто, да?
 
-- вызвав функцию-конструктор, создав объект, для чего у нас есть ключевое слово `new`:  
+- вызвав функцию-конструктор, создав объект, для чего у нас есть ключевое слово `new`:
 
 ```js
 function Book(name) {
@@ -128,9 +129,9 @@ const curriedSummer = curry(sum);
 // 6, можем просто вызвать функцию частично
 console.log( curriedSummer(1, 2, 3) );
 // все еще 6, мы прокаррировали первый аргумент
-console.log( curriedSummer(1)(2,3) ); 
+console.log( curriedSummer(1)(2,3) );
 // и тут 6, мы прокаррирровали все аргументы
-console.log( curriedSummer(1)(2)(3) ); 
+console.log( curriedSummer(1)(2)(3) );
 ```
 
 Функция `curry(func)` выглядит сложновато — давайте разберем ее.
@@ -157,7 +158,7 @@ log("DEBUG", new Date(), 'debug message')
 ```js
 const curriedLog = curry(log);
 
-// после этого мы сможем пользоваться ей, как раньше: 
+// после этого мы сможем пользоваться ей, как раньше:
 curriedLog("DEBUG", new Date(), 'debug message')
 // [23:33] [DEBUG] debug message
 

@@ -5,6 +5,7 @@ date:   2023-02-20 13:24:43 +0400
 description: Генераторы в JS — что это, зачем это и почему это красиво. Ну, и о монадах немного.
 tags: [ 'js' ]
 categories: [ 'javascript' ]
+languages: [ 'ru' ]
 disqus_comments: true
 related_posts: true
 
@@ -93,7 +94,7 @@ const generator = generateNumberSequence();
 
 for (const value of generator) {
   console.log(value)
-} 
+}
 
 /*
 1
