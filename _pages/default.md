@@ -1,6 +1,6 @@
 ---
 layout: page
-title: главная
+title: {% translate pages.main %}
 permalink: /
 nav: true
 nav_order: 1

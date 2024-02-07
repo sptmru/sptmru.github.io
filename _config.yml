@@ -18,6 +18,10 @@ keywords: sptm, sptmru, Soslan Aldatov, Node.js, JavaScript, backend, mentor, me
 lang: ru # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
+languages: ["en", "ru"]
+exclude_from_localizations: ["javascript", "images", "css"]
+
+
 url: https://sptmru.github.io # the base hostname & protocol for your site
 baseurl: '' # the subpath of your site, e.g. /blog/
 last_updated: false # set to true if you want to display last updated in the footer
@@ -203,6 +207,7 @@ plugins:
   - jekyll-link-attributes
   - jekyll-twitter-plugin
   - jemoji
+  - jekyll-multiple-languages-plugin
 
 # Sitemap settings
 defaults:
