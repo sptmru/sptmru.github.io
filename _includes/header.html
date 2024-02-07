@@ -44,7 +44,7 @@
             <div class="navbar-collapse collapse text-right" id="navbarNav">
                 <ul class="navbar-nav ml-auto flex-nowrap">
                     {%- for page in site.pages -%} {% if page.permalink == '/'
-                    %} {% assign about_title = testtitle %} {% endif %} {%
+                    %} {% assign about_title = page.title %} {% endif %} {%
                     endfor %}
 
                     <!-- About -->
@@ -98,7 +98,7 @@
                         class="nav-item {% if page.title == p.title %}active{% endif %}"
                     >
                         <a class="nav-link" href="{{ p.url | relative_url }}"
-                            >{{ p.title }} {%- if page.title == p.title -%}
+                            >{% t p.title %} {%- if page.title == p.title -%}
                             <span class="sr-only">(current)</span>
                             {%- endif -%}
                         </a>
