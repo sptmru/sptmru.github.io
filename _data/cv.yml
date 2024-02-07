@@ -1,9 +1,9 @@
-- title: {{ cv.title }}
+- title: cv.title
   type: map
   contents:
-    - name: {{ cv.name.title }}
-      value: {{ cv.name.value }}
-    - name: {{ cv.date.title }}
-      value: {{ cv.date.value }}
-    - name: {{ cv.languages.title }}
-      value: {{ cv.languages.value }}
+    - name: {% translate cv.name.title %}
+      value: {% translate cv.name.value %}
+    - name: {% translate cv.date.title %}
+      value: {% translate cv.date.value %}
+    - name: {% translate cv.languages.title %}
+      value: {% translate cv.languages.value %}
