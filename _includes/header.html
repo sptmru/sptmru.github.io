@@ -97,20 +97,34 @@
                   <li
                       class="nav-item {% if page.title == p.title %}active{% endif %}"
                   >
-                      <a class="nav-link" href="{{ p.url | relative_url }}"
-                          >{% t p.title %} {%- if page.title == p.title -%}
-                          <span class="sr-only">(current)</span>
-                          {%- endif -%}
-                      </a>
+                  {% if site.lang == "ru" %} {% capture link1 %}{{ site.baseurl_root }}/ru{{ p.url | relative_url }}{% endcapture %}
+                    <a class="nav-link" href="{{ link1 }}">{% t p.title %} 
+                      {%- if page.title == p.title -%}
+                        <span class="sr-only">(current)</span>
+                      {%- endif -%}
+                    </a>
+                  {% elsif site.lang == "en" %} {% capture link2 %}{{ site.baseurl_root }}{{ p.url | relative_url }}{% endcapture %}
+                    <a class="nav-link" href="{{ link2 }}">{% t p.title %} 
+                      {%- if page.title == p.title -%}
+                        <span class="sr-only">(current)</span>
+                      {%- endif -%}
+                    </a>
+                  {% endif %}
+                      
                   </li>
                   {%- endif -%} {%- endif -%} {% endfor -%}
                   <li
                       class="nav-item {% if page.title == p.title %}active{% endif %}"
                   >
-                      <a class="nav-link" href="/blog/"
-                          >{% t site.blog_nav_title %}
-                          <span class="sr-only">(current)</span>
+                    {% if site.lang == "ru" %}
+                      <a class="nav-link" href="/ru/blog/">{% t site.blog_nav_title %}
+                        <span class="sr-only">(current)</span>
                       </a>
+                    {% elsif site.lang == "en" %}
+                      <a class="nav-link" href="/blog/">{% t site.blog_nav_title %}
+                        <span class="sr-only">(current)</span>
+                      </a>
+                    {% endif %}
                   </li>
 
                   {%- if site.enable_darkmode %}
