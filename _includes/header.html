@@ -69,7 +69,7 @@
               {%- endif -%} {% endfor %}
             </div>
           </li>
-          {%- endif -%} {% endfor -%}
+          {%- endif -%} {%- endif -%} {% endfor -%}
 
           <li class="nav-item arewehere {% if page.title == p.title %}active{% endif %}"
             <a class="nav-link" href="/ru/blog/">{%t site.blog_nav_title %} <span class="sr-only">(current)</span> </a>
