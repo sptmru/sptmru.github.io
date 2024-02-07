@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Всякое о JS на бэкенде
+title: site.title
 first_name: Сослан
 # middle_name:
 last_name: Алдатов
@@ -116,7 +116,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Разное о Node.js и о всяких бэкенд-штуках # blog_name will be displayed in your blog page
+blog_name: blog.name # blog_name will be displayed in your blog page
 blog_nav_title: titles.blog # your blog must have a title for it to be displayed in the nav bar
 permalink: /:year/:title/
 

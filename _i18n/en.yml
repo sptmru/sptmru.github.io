@@ -1,6 +1,7 @@
 global:
-  swedish: Russian
+  russian: Russian
   english: English
+  title: Soslan Aldatov | Freelance VoIP expert
 pages:
   home: home
   cv: cv
@@ -22,3 +23,5 @@ cv:
   languages:
     title: Languages
     value: English, Russian
+blog:
+  name: Stuff about Node.js and more

@@ -1,6 +1,7 @@
 global:
   russian: Русский
   english: English
+  title: Сослан Алдатов | Бэкенд-разработка, VoIP, DevOps, фриланс
 pages:
   home: главная
   cv: cv
@@ -22,3 +23,5 @@ cv:
   languages:
     title: Языки
     value: Русский, английский
+blog:
+  name: Всякое о бэкенде, Node.js и не только
