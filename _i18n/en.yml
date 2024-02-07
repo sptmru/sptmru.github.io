@@ -9,6 +9,7 @@ pages:
   home: home
   cv: cv
   blog: blog
+  notfound: 404 | Page not found
 titles:
   home: home
   cv: cv
@@ -28,3 +29,5 @@ cv:
     value: English, Russian
 blog:
   name: Stuff about Node.js and more
+notfound:
+  description: Looks like this page doesn't exist :(

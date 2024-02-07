@@ -9,6 +9,7 @@ pages:
   home: главная
   cv: cv
   blog: блог
+  notfound: 404 | Страница не найдена
 titles:
   home: главная
   cv: cv
@@ -28,3 +29,5 @@ cv:
     value: Русский, английский
 blog:
   name: Всякое о бэкенде, Node.js и не только
+notfound:
+  description: Похоже, что такой страницы не существует :(
