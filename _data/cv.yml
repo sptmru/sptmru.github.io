@@ -1,9 +1,9 @@
-- title: Основная информация
+- title: cv.title
   type: map
   contents:
-    - name: Имя
-      value: Сослан Алдатов
-    - name: Дата рождения
-      value: 30 октября 1991 года
-    - name: Языки
-      value: Русский (родной), English (B2)
+    - name: cv.name.title
+      value: cv.name.value
+    - name: cv.date.title
+      value: cv.date.value
+    - name: cv.languages.title
+      value: cv.languages.value

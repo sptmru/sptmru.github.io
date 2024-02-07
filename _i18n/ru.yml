@@ -5,3 +5,14 @@ pages:
   home: главная
   cv: cv
   blog: блог
+cv:
+  title: Информация
+  name:
+    title: Имя
+    value: Сослан Алдатов
+  date:
+    title: Дата рождения
+    value: 30 октября 1991 года
+  languages:
+    title: Языки
+    value: Русский, английский

@@ -5,3 +5,14 @@ pages:
   home: home
   cv: cv
   blog: blog
+cv:
+  title: Info
+  name:
+    title: Name
+    value: Soslan Aldatov
+  date:
+    title: Date of birth
+    value: 30 Oct 1991
+  languages:
+    title: Languages
+    value: English, Russian

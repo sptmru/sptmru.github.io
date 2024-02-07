@@ -1,6 +1,6 @@
 ---
 layout: page
-title: главная
+title: pages.home
 permalink: /
 nav: true
 nav_order: 1
