@@ -2,6 +2,9 @@ global:
   russian: Русский
   english: Английский
   title: Сослан Алдатов | Бэкенд-разработка, VoIP, DevOps, фриланс
+short:
+  russian: рус
+  english: англ
 pages:
   home: главная
   cv: cv

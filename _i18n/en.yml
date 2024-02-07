@@ -2,6 +2,9 @@ global:
   russian: Russian
   english: English
   title: Soslan Aldatov | Freelance VoIP expert
+short:
+  russian: rus
+  english: eng
 pages:
   home: home
   cv: cv
