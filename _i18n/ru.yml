@@ -5,6 +5,10 @@ pages:
   home: главная
   cv: cv
   blog: блог
+titles:
+  home: главная
+  cv: cv
+  blog: блог
 cv:
   title: Информация
   name:

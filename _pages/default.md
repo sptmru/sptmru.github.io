@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: home
 title: titles.home
 permalink: /
 nav: true
