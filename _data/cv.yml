@@ -1,9 +1,9 @@
-- title: cv.title
+- title: Info
   type: map
   contents:
-    - name: {% translate cv.name.title %}
-      value: {% translate cv.name.value %}
-    - name: {% translate cv.date.title %}
-      value: {% translate cv.date.value %}
-    - name: {% translate cv.languages.title %}
-      value: {% translate cv.languages.value %}
+    - name: Name
+      value: Soslan Aldatov
+    - name: Date of birth
+      value: 30 October 1991
+    - name: Languages
+      value: English, Russian
