@@ -24,7 +24,7 @@ pagination:
                 <i class="fas fa-hashtag fa-sm"></i>
                 {% if site.lang == "ru" %}
                   <a
-                      href="{{ tag | slugify | prepend: '/ru/blog/tag/' | relative_url }}"
+                      href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}"
                       >{{ tag }}</a
                   >
                 {% elsif site.lang == "en" %}
