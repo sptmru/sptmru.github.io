@@ -21,7 +21,9 @@
     {%if page.url == '/blog' or page.url == '/ru/blog' or page.url == '/blog/index.html' or page.url == '/ru/blog/index.html' %}
       {% t site.blog_nav_title %} | {{ title }}
     {%- elsif page.title != "blank" and page.url != "/" -%}
-      {%- if page.title == nil or page.title == "" -%}
+      {%- if page.title != nil -%}
+        {{ page.title }} | {{ title }}
+      {%- elsif page.title == nil or page.title == "" -%}
         {{ page.date | date: "%Y" }} | {{ title }}
       {%- else -%}
         {{ title }}
