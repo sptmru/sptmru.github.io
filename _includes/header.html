@@ -98,19 +98,18 @@
                       class="nav-item {% if page.title == p.title %}active{% endif %}"
                   >
                   {% if site.lang == "ru" %} {% capture link1 %}{{ site.baseurl_root }}/ru{{ p.url | relative_url }}{% endcapture %}
-                    <a class="nav-link" href="{{ link1 }}">{% t p.title %} 
+                    <a class="nav-link" href="{{ link1 }}">{% t p.title %}
                       {%- if page.title == p.title -%}
                         <span class="sr-only">(current)</span>
                       {%- endif -%}
                     </a>
                   {% elsif site.lang == "en" %} {% capture link2 %}{{ site.baseurl_root }}{{ p.url | relative_url }}{% endcapture %}
-                    <a class="nav-link" href="{{ link2 }}">{% t p.title %} 
+                    <a class="nav-link" href="{{ link2 }}">{% t p.title %}
                       {%- if page.title == p.title -%}
                         <span class="sr-only">(current)</span>
                       {%- endif -%}
                     </a>
                   {% endif %}
-                      
                   </li>
                   {%- endif -%} {%- endif -%} {% endfor -%}
                   {% if site.lang == "ru" %}
@@ -131,13 +130,13 @@
 
                   <li class="nav-item{% if site.lang == 'en' %} active{% endif %}">
                     <a class="nav-link" href="/">english</a>
-                  </li> 
+                  </li>
                   <span class="nav-item">/</span>
                   <li class="nav-item{% if site.lang == 'ru' %} active{% endif %}">
                     <a class="nav-link" href="/ru/">русский</a>
                   </li>
                   <li class="nav-item active"
-        
+
                   {%- if site.enable_darkmode %}
 
                   <!-- Toogle theme mode -->
