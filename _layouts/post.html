@@ -76,6 +76,14 @@ layout: default
     {% endfor %}
   </ul>
 
+  <script id="diffblog-plugin-script" async="false" src="https://diff.blog/static/js/diffblog_plugin_v1.js"></script>
+  <script>
+    document.getElementById("diffblog-plugin-script").addEventListener("load", function () {
+      DiffBlog(
+              "6it6gx3ne5id9kcpizdilzhhypm96tjh2yj8yfjey44gcmpx1y"
+      );
+    });
+  </script>
 
   {%- if site.disqus_shortname and page.disqus_comments -%}
     {% include disqus.html %}
