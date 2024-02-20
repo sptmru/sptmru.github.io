@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://sptmru.github.io/ru/sitemap.xml
