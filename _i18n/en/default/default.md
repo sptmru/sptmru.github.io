@@ -16,4 +16,4 @@ My key expertise:
 
 You can also check my [LinkedIn](https://www.linkedin.com/in/sptm/) and [GitHub](https://github.com/sptmru).
 Feel free to contact me by email: [soslanaldatov@gmail.com](mailto:soslanaldatov@gmail.com) or Telegram: [@sptm_dev](https://t.me/sptm_dev).
-Also, here's my [Twitter](https://twitter.com/sptmru), [Mastodon](https://mastodon.social/@sptm), [Bluesky](https://bsky.app/profile/sptmdev.bsky.social) and [Keybase](https://keybase.io/sptm_dev).
+Also, here's my [Twitter](https://twitter.com/sptmru) and [Mastodon](https://mastodon.social/@sptm).

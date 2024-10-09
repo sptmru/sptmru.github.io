@@ -4,7 +4,7 @@ https://keybase.io/sptm_dev
 
 I hereby claim:
 
-  * I am an admin of https://sptm.space
+  * I am an admin of https://sptm.dev
   * I am sptm_dev (https://keybase.io/sptm_dev) on keybase.
   * I have a public key with fingerprint 3D2D 9FBB 9EBB EB87 869E  BDDA 75FF 7706 9388 BEAF
 
@@ -32,7 +32,8 @@ To do so, I am signing this object:
       ]
     },
     "service": {
-      "hostname": "sptm.space",
+      "entropy": "LGFDC9BNp3TAtT8RJ6ycw4vw",
+      "hostname": "sptm.dev",
       "protocol": "https:"
     },
     "type": "web_service_binding",

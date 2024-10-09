@@ -14,5 +14,4 @@
 
 Подробнее о моем опыте и навыках можно почитать в [LinkedIn](https://www.linkedin.com/in/sptm/) (а еще там есть отзывы от моих коллег и заказчиков!), какой-то код можно глянуть на [GitHub](https://github.com/sptmru). Написать мне можно в Telegram: [@sptm_dev](https://t.me/sptm_dev) или на почту: [soslanaldatov@gmail.com](mailto:soslanaldatov@gmail.com).
 
-Здесь я иногда [рассказываю](https://sptm.space/blog/) о Node.js и всяком о бэкенде — теория, базы данных, очереди сообщений, облака и прочее такое. Еще меня можно читать в [Twitter](https://twitter.com/sptmru), [Mastodon](https://mastodon.social/@sptm) и [Bluesky](https://bsky.app/profile/sptmdev.bsky.social).
-Мой Keybase — [здесь](https://keybase.io/sptm_dev). Если нужно, то [тут](https://keybase.io/sptm_dev/pgp_keys.asc?fingerprint=3ee1fb59fbced4a32cf814914bbf79fd68e9952b) можно найти мой публичный GPG-ключ.
+Здесь я иногда [рассказываю](https://sptm.dev/blog/) о Node.js и всяком о бэкенде — теория, базы данных, очереди сообщений, облака и прочее такое. Еще меня можно читать в [Twitter](https://twitter.com/sptmru) и [Mastodon](https://mastodon.social/@sptm).

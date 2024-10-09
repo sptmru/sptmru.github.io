@@ -13,7 +13,7 @@ related_posts: true
 
 ## Введение
 
-Вообще, я уже писал о принципах проектирования (SOLID, GRASP, вот эти вот штуки) [здесь](https://sptm.space/ru/2023/solid-grasp-and-stuff/). Но принципы, которые я опишу здесь, вполне заслуживают отдельной статьи.
+Вообще, я уже писал о принципах проектирования (SOLID, GRASP, вот эти вот штуки) [здесь](https://sptm.dev/ru/2023/solid-grasp-and-stuff/). Но принципы, которые я опишу здесь, вполне заслуживают отдельной статьи.
 
 Dependency Injection и Inversion of Control — штуки связанные, но это не одно и то же. Можно считать, что Dependency Injection — это реализация Inversion of Control. Поэтому с IoC и начнем.
 
