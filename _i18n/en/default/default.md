@@ -8,7 +8,7 @@ My key expertise includes:
 * **Backend Development**: Node.js, Python, Golang, C.
 * **Databases**: Postgres, MySQL, MongoDB, Redis.
 * **Message Brokers**: RabbitMQ, Kafka, AWS SQS, Redis.
-* **VoIP Technologies**: SIP protocol, Asterisk, FreeSWITCH, Kamailio/OpenSIPs, Drachtio, WebRTC..
+* **VoIP Technologies**: SIP stack (including RTP, RTCP, SDP and so on), Asterisk, FreeSWITCH, Kamailio/OpenSIPs, Drachtio, Jambonz, WebRTC.
 * **Infrastructure**: Docker, Kubernetes, Ansible, Chef, Linux.
 * **Monitoring**: ELK stack (Elasticsearch, Logstash, Kibana, Grafana), Prometheus.
 * **CI/CD**: Gitlab CI, GitHub Actions, Jenkins.

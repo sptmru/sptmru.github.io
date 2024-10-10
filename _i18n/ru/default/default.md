@@ -7,7 +7,7 @@
 * **Бэкенд-разработка**: Node.js, Python, Golang, C.
 * **Базы данных**: Postgres, MySQL, MongoDB, Redis.
 * **Очереди сообщений**: RabbitMQ, AWS SQS, Redis.
-* **VoIP-технологии**: протокол SIP и то, что рядом (RTP, RTCP, SDP и тому подобные), Asterisk, FreeSWITCH, Kamailio/OpenSIPs, Drachtio, WebRTC.
+* **VoIP-технологии**: протокол SIP и то, что рядом (RTP, RTCP, SDP и тому подобные), Asterisk, FreeSWITCH, Kamailio/OpenSIPs, Drachtio, Jambonz, WebRTC.
 * **Инфраструктура и мониторинг**: ELK stack (Elasticsearch, Logstash, Kibana, Grafana), Prometheus.
 * **Облака**: AWS, GCP.
 * **DevOps-штуки**: Docker, Kubernetes, Ansible, Chef, Linux, CI/CD-практики.
