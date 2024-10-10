@@ -1,7 +1,7 @@
 Hi! I'm Soslan, a freelance software engineer / VoIP expert, based in Tbilisi, Georgia. Nice to meet you here!
 
 I've been working as a software engineer for about 15 years. Most of the time I use Node.js — and sometimes it's C, Golang or Python. 
-I am deeply into telecommunications, video conferencing and VoIP stuff, and I'm also a big fan of DevOps practices. Throughout my career, I've developed deep expertise in platforms like Asterisk, FreeSWITCH, Kamailio, OpenSIPs, Drachtio, and various custom projects.
+I am deeply into telecommunications, video conferencing and VoIP stuff, and I'm also a big fan of DevOps practices. Throughout my career, I've developed deep expertise in platforms like Asterisk, FreeSWITCH, Kamailio, OpenSIPs, Drachtio, Jambonz, and various custom projects.
 
 My key expertise includes:
 
