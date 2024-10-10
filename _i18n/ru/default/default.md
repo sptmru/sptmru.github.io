@@ -4,11 +4,11 @@
 
 С этим всем ко мне можно обращаться — а вот краткий список всего того, с чем я часто работаю и буду рад вам помочь:
 
-* **Бэкенд-разработка**: Node.js, Python, Golang. А еще я пару лет писал на PHP когда-то.
+* **Бэкенд-разработка**: Node.js, Python, Golang, C.
 * **Базы данных**: Postgres, MySQL, MongoDB, Redis.
 * **Очереди сообщений**: RabbitMQ, AWS SQS, Redis.
+* **VoIP-технологии**: протокол SIP и то, что рядом (RTP, RTCP, SDP и тому подобные), Asterisk, FreeSWITCH, Kamailio/OpenSIPs, Drachtio, WebRTC.
 * **Инфраструктура и мониторинг**: ELK stack (Elasticsearch, Logstash, Kibana, Grafana), Prometheus.
-* **VoIP-технологии**: протокол SIP и сопутствующие технологии, Asterisk, FreeSWITCH, Kamailio/OpenSIPs, Drachtio, WebRTC.
 * **Облака**: AWS, GCP.
 * **DevOps-штуки**: Docker, Kubernetes, Ansible, Chef, Linux, CI/CD-практики.
 
