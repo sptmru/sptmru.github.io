@@ -139,7 +139,7 @@ const stringsProxy = new Proxy(strings, {
 });
 
 stringsProxy.val1 = 'string'; // true
-console.log(strings); // { val1: 'string'} — строковое значение добавилось в объеет
+console.log(strings); // { val1: 'string'} — строковое значение добавилось в объект
 
 // теперь мы не падаем с TypeError, просто возвращаем false и ничего в массив не добавляем
 stringsProxy.val2 = 1; // false
