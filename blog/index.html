@@ -24,7 +24,7 @@ pagination:
                 <i class="fas fa-hashtag fa-sm"></i>
                 {% if site.lang == "ru" %}
                   <a
-                      href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}"
+                      href="https://sptm.dev/ru/blog/tag/{{ tag }}"
                       >{{ tag }}</a
                   >
                 {% elsif site.lang == "en" %}
