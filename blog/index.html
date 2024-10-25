@@ -22,17 +22,10 @@ pagination:
             {% for tag in site.display_tags %}
             <li>
                 <i class="fas fa-hashtag fa-sm"></i>
-                {% if site.lang == "ru" %}
-                  <a
-                      href="https://sptm.dev/ru/blog/tag/{{ tag }}"
-                      >{{ tag }}</a
-                  >
-                {% elsif site.lang == "en" %}
-                  <a
-                      href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}"
-                      >{{ tag }}</a
-                  >
-                {% endif %}
+                    <a
+                        href="{{ site.url }}/{{ site.lang }}/blog/tag/{{ tag }}"
+                        >{{ tag }}</a
+                    >
             </li>
             {% unless forloop.last %}
             <p>&bull;</p>
