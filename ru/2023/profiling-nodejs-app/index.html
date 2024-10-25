@@ -1,0 +1,206 @@
+<!DOCTYPE html> <html lang="ru"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta name="google-site-verification" content="352510442"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title>Профилирование Node.js-приложений | Сослан Алдатов | Бэкенд-разработка, VoIP, DevOps, фриланс</title> <meta name="author" content="Сослан Алдатов"> <meta name="description" content="Статья о профилировании и оптимизации Node.js-приложений."> <meta name="keywords" content="sptm, sptmru, Soslan Aldatov, Node.js, JavaScript, backend, VoIP, Asterisk, FreeSWITCH, Kamailio, OpenSIPs, Drachtio"> <meta property="og:site_name" content="Сослан Алдатов | Бэкенд-разработка, VoIP, DevOps, фриланс"> <meta property="og:type" content="website"> <meta property="og:title" content="Сослан Алдатов | Бэкенд-разработка, VoIP, DevOps, фриланс | Профилирование Node.js-приложений"> <meta property="og:url" content="https://sptm.dev/ru/2023/profiling-nodejs-app/"> <meta property="og:description" content="Статья о профилировании и оптимизации Node.js-приложений."> <meta property="og:locale" content="ru"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Профилирование Node.js-приложений"> <meta name="twitter:description" content="Статья о профилировании и оптимизации Node.js-приложений."> <meta name="twitter:site" content="@sptmru"> <meta name="twitter:creator" content="@sptmru"> <script type="application/ld+json">
+    {
+      "author":
+      {
+        "@type": "Person",
+        "name": "Сослан Алдатов"
+      },
+      "url": "https://sptm.dev/ru/2023/profiling-nodejs-app/",
+      "@type": "WebSite",
+      "description": "Статья о профилировании и оптимизации Node.js-приложений.",
+      "headline": "Профилирование Node.js-приложений",
+      "sameAs": ["https://github.com/sptmru", "https://telegram.me/sptm_dev", "https://www.linkedin.com/in/sptm", "https://twitter.com/sptmru", "https://gitlab.com/sptmru", "https://stackoverflow.com/users/5470429/sptm", "https://www.last.fm/user/sptmru"],
+      "name": "Сослан Алдатов",
+      "@context": "https://schema.org"
+    }
+</script> <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous"> <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light"> <script type="text/javascript">!function(e,t,c,n,r,a,s){e[r]=e[r]||function(){(e[r].a=e[r].a||[]).push(arguments)},e[r].l=1*new Date;for(var i=0;i<document.scripts.length;i++)if(document.scripts[i].src===n)return;a=t.createElement(c),s=t.getElementsByTagName(c)[0],a.async=1,a.src=n,s.parentNode.insertBefore(a,s)}(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym"),ym(92729596,"init",{clickmap:!0,trackLinks:!0,accurateTrackBounce:!0,webvisor:!0});</script> <noscript><div><img src="https://mc.yandex.ru/watch/92729596" style="position:absolute; left:-9999px;" alt=""></div></noscript> <script src="https://8x8.vc/vpaas-magic-cookie-7a577401e6ff45bc9738555943af1a51/external_api.js" async></script> <style>html,body,#jaas-container{height:100%}</style> <script type="text/javascript">window.onload=(()=>{new JitsiMeetExternalAPI("8x8.vc",{roomName:"vpaas-magic-cookie-7a577401e6ff45bc9738555943af1a51/SampleAppCoastalDonationsContinueInitially",parentNode:document.querySelector("#jaas-container")})});</script> <link rel="shortcut icon" href="/assets/img/apple-icon-120x120.png"> <link rel="stylesheet" href="/assets/css/main.css"> <link rel="canonical" href="https://sptm.dev/ru/2023/profiling-nodejs-app/"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark"> <script src="/assets/js/theme.js"></script> <script src="/assets/js/dark_mode.js"></script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top"> <div class="container"> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="navbar-collapse collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/ru/">главная</a> </li> <li class="nav-item "> <a class="nav-link" href="/ru/blog/">блог <span class="sr-only">(current)</span> </a> </li> <li class="nav-item"> <a class="nav-link" href="/">english</a> </li> <span class="nav-item">/</span> <li class="nav-item active"> <a class="nav-link" href="/ru/">русский</a> </li> <li class="nav-item active" toogle theme mode> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5"> <div class="post"> <header class="post-header"> <meta property="og:type" content="article"> <h1 class="post-title">Профилирование Node.js-приложений</h1> <p class="post-meta">March 9, 2023</p> <p class="post-tags"> <a href="/ru/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>   ·   <a href="/ru/blog/tag/js"> <i class="fas fa-hashtag fa-sm"></i> js</a>     ·   <a href="/ru/blog/category/javascript"> <i class="fas fa-tag fa-sm"></i> javascript</a>   </p> </header> <article class="post-content"> <h2 id="с-чего-начнем">С чего начнем?</h2> <p>Иногда нам сложно понять, какого черта приложение работает медленно, хотя не должно. А иногда оно вроде бы и работает ОК, но нужно, чтобы оно работало быстрее. Можно, конечно, долго и вдумчиво читать код, рандомно что-то менять, замерять скорость и надеяться только на себя.</p> <p>К счастью, в Node.js встроен помощник на такие случаи — профайлер. Точнее, он встроен в V8 (что это такое, можно почитать <a href="https://sptm.dev/ru/2023/asynchrony-in-js/">здесь</a> или даже <a href="https://v8.dev" rel="external nofollow noopener" target="_blank">здесь</a>). Профайлер V8 — это такая штука, которая делит стек выполняющейся программы (о стеке можно почитать <a href="https://sptm.dev/ru/2023/memory-management-in-js/">в моей статье об управлении памятью в JS</a>) на фрагменты через равные промежутки времени. А представляет он нам результаты этих фрагментов с учетом оптимизаций (к примеру, JIT-компиляции) в виде ряда тиков. Примерно вот так:</p> <pre><code class="language-csv">code-creation,LazyCompile,0,0x2d5000a337a0,396,"bp native array.js:1153:16",0x289f644df68,~
+code-creation,LazyCompile,0,0x2d5000a33940,716,"hasOwnProperty native v8natives.js:198:30",0x289f64438d0,~
+code-creation,LazyCompile,0,0x2d5000a33c20,284,"ToName native runtime.js:549:16",0x289f643bb28,~
+code-creation,Stub,2,0x2d5000a33d40,182,"DoubleToIStub"
+code-creation,Stub,2,0x2d5000a33e00,507,"NumberToStringStub"
+</code></pre> <p>Не очень понятно, правда? В прошлом пришлось бы отдельно собрать V8, чтобы иметь возможность анализировать эти тики. Но, к счастью, в 2016 году у Node.js появились опции <code class="language-plaintext highlighter-rouge">--prof</code> и <code class="language-plaintext highlighter-rouge">--prof-process</code>, которые позволяют делать это сильно проще.</p> <p>Давайте представим, что пишем сверх-хайлоад-микросервис по созданию и аутентификации пользователей на Express, а потом отпрофилируем его, чтобы понять, как его можно ускорить.</p> <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">express</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">crypto</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">crypto</span><span class="dl">'</span><span class="p">;</span>
+
+
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nf">express</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">users</span> <span class="o">=</span> <span class="p">[];</span>
+
+
+<span class="nx">app</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/newUser</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">username</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">username</span> <span class="o">||</span> <span class="dl">''</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">password</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">password</span> <span class="o">||</span> <span class="dl">''</span><span class="p">;</span>
+
+    <span class="nx">username</span> <span class="o">=</span> <span class="nx">username</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">[</span><span class="sr">!@#$%^&amp;*</span><span class="se">]</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">''</span><span class="p">);</span>
+
+    <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">username</span> <span class="o">||</span> <span class="o">!</span><span class="nx">password</span> <span class="o">||</span> <span class="nx">users</span><span class="p">[</span><span class="nx">username</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nf">sendStatus</span><span class="p">(</span><span class="mi">400</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">const</span> <span class="nx">salt</span> <span class="o">=</span> <span class="nx">crypto</span><span class="p">.</span><span class="nf">randomBytes</span><span class="p">(</span><span class="mi">128</span><span class="p">).</span><span class="nf">toString</span><span class="p">(</span><span class="dl">'</span><span class="s1">base64</span><span class="dl">'</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">hash</span> <span class="o">=</span> <span class="nx">crypto</span><span class="p">.</span><span class="nf">pbkdf2Sync</span><span class="p">(</span><span class="nx">password</span><span class="p">,</span> <span class="nx">salt</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sha512</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="nx">users</span><span class="p">[</span><span class="nx">username</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">salt</span><span class="p">,</span> <span class="nx">hash</span> <span class="p">};</span>
+
+    <span class="nx">res</span><span class="p">.</span><span class="nf">sendStatus</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+<span class="p">});</span>
+
+
+<span class="nx">app</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/auth</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">username</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">username</span> <span class="o">||</span> <span class="dl">''</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">password</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">password</span> <span class="o">||</span> <span class="dl">''</span><span class="p">;</span>
+
+    <span class="nx">username</span> <span class="o">=</span> <span class="nx">username</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">[</span><span class="sr">!@#$%^&amp;*</span><span class="se">]</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">''</span><span class="p">);</span>
+
+    <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">username</span> <span class="o">||</span> <span class="o">!</span><span class="nx">password</span> <span class="o">||</span> <span class="o">!</span><span class="nx">users</span><span class="p">[</span><span class="nx">username</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nf">sendStatus</span><span class="p">(</span><span class="mi">400</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">salt</span><span class="p">,</span> <span class="nx">hash</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">users</span><span class="p">[</span><span class="nx">username</span><span class="p">];</span>
+    <span class="kd">const</span> <span class="nx">encryptHash</span> <span class="o">=</span> <span class="nx">crypto</span><span class="p">.</span><span class="nf">pbkdf2Sync</span><span class="p">(</span><span class="nx">password</span><span class="p">,</span> <span class="nx">salt</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sha512</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="k">if </span><span class="p">(</span><span class="nx">crypto</span><span class="p">.</span><span class="nf">timingSafeEqual</span><span class="p">(</span><span class="nx">hash</span><span class="p">,</span> <span class="nx">encryptHash</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nf">sendStatus</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nf">sendStatus</span><span class="p">(</span><span class="mi">401</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+
+
+<span class="nx">app</span><span class="p">.</span><span class="nf">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Example app listening on port 3000</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">});</span>
+</code></pre></div></div> <h2 id="профилирование">Профилирование</h2> <p>Вот мы написали приложение, выкатили, а пользователи жалуются, что все медленно. Мы запустим приложение с опцией <code class="language-plaintext highlighter-rouge">--prof</code> и сымитируем нагрузку на приложение с помощью <a href="https://httpd.apache.org/docs/2.4/programs/ab.html" rel="external nofollow noopener" target="_blank">ApacheBench</a>:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node <span class="nt">--prof</span> express-app.js <span class="c"># запускаем приложение с опцией --prof</span>
+
+<span class="c"># создаем пользователя</span>
+curl <span class="nt">-X</span> GET <span class="s2">"http://localhost:3000/newUser?username=user&amp;password=password"</span>
+
+<span class="c"># имитируем множество авторизаций</span>
+ab <span class="nt">-k</span> <span class="nt">-c</span> 20 <span class="nt">-n</span> 250 <span class="s2">"http://localhost:3000/auth?username=user&amp;password=password"</span>
+</code></pre></div></div> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># получаем такой результат:
+
+Concurrency Level:      20
+Time taken for tests:   6.620 seconds
+Complete requests:      250
+Failed requests:        0
+Keep-Alive requests:    250
+Total transferred:      57250 bytes
+HTML transferred:       500 bytes
+Requests per second:    37.77 [#/sec] (mean)
+Time per request:       529.579 [ms] (mean)
+Time per request:       26.479 [ms] (mean, across all concurrent requests)
+Transfer rate:          8.45 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   2.0      0       9
+Processing:    29  506 129.5    502    1038
+Waiting:       29  506 129.6    502    1038
+Total:         29  507 128.8    502    1038
+
+Percentage of the requests served within a certain time (ms)
+  50%    502
+  66%    503
+  75%    507
+  80%    529
+  90%    535
+  95%    551
+  98%   1001
+  99%   1005
+ 100%   1038 (longest request)
+</code></pre></div></div> <p>Получаем, что наше приложение может обработать только 37.77 запросов в секунду, и запрос в среднем занимает около полусекунды, что не очень-то для хайлоад-приложения. Поскольку мы запустили наше приложение с опцией <code class="language-plaintext highlighter-rouge">--prof</code>, в каталоге с приложением появится файл вида <code class="language-plaintext highlighter-rouge">isolate-0x&lt;много цифр&gt;-v8.log</code>. Разберемся в этом файле с помощью тикового процессора, встроенного в Node.js (флаг <code class="language-plaintext highlighter-rouge">--prof-process</code>):</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node <span class="nt">--prof-process</span> isolate-0xnnnnnnnnnnnn-v8.log <span class="o">&gt;</span> processed.txt
+</code></pre></div></div> <p>Откроем файл <code class="language-plaintext highlighter-rouge">processed.txt</code>, увидим кучу секций, разбитых по языкам. Глянем в Summary:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Summary]:
+   ticks  total  nonlib   name
+     11    0.2%    0.2%  JavaScript
+   5454   99.1%   99.7%  C++
+     18    0.3%    0.3%  GC
+     36    0.7%          Shared libraries
+      4    0.1%          Unaccounted
+</code></pre></div></div> <p>Целых 99 с чем-то процентов заняли задачи, выполняемые C++. Выглядит не очень и само по себе, но посмотрим в раздел C++, чтобы понять, какие функции заняли больше процессорного времени:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[C++]:
+   ticks  total  nonlib   name
+   5357   97.3%   98.0%  T node::contextify::ContextifyScript::~ContextifyScript()
+     42    0.8%    0.8%  T node::builtins::BuiltinLoader::CompileFunction(v8::FunctionCallbackInfo&lt;v8::Value&gt; const&amp;)
+     20    0.4%    0.4%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo&lt;v8::Value&gt; const&amp;)
+     16    0.3%    0.3%  T _semaphore_destroy
+      9    0.2%    0.2%  T _posix_spawnattr_setmacpolicyinfo_np
+      3    0.1%    0.1%  t std::__1::basic_ostream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp; std::__1::__put_character_sequence&lt;char, std::__1::char_traits&lt;char&gt; &gt;(std::__1::basic_ostream&lt;char, std::__1::char_traits&lt;char&gt; &gt;&amp;, char const*, unsigned long)
+      2    0.0%    0.0%  t std::__1::ostreambuf_iterator&lt;char, std::__1::char_traits&lt;char&gt; &gt; std::__1::__pad_and_output&lt;char, std::__1::char_traits&lt;char&gt; &gt;(std::__1::ostreambuf_iterator&lt;char, std::__1::char_traits&lt;char&gt; &gt;, char const*, char const*, char const*, std::__1::ios_base&amp;, char)
+      2    0.0%    0.0%  T _mach_get_times
+      1    0.0%    0.0%  T _mig_dealloc_reply_port
+      1    0.0%    0.0%  T __simple_putline
+      1    0.0%    0.0%  T ___psynch_cvbroad
+</code></pre></div></div> <p>Все еще не очень понятно :( на самом деле, иногда все становится понятно и из этой секции — но не в этот раз. Чтобы лучшве понять, что это за <code class="language-plaintext highlighter-rouge">node::contextify::ContextifyScript::~ContextifyScript()</code>, отбирающий 98% процессорного времени, обратимся к секции <code class="language-plaintext highlighter-rouge">Bottom up (heavy) profile</code>, которая предоставляет информацию о том,где чаще всего вызывается каждая функция. Там мы видим это:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   5357   97.3%  T node::contextify::ContextifyScript::~ContextifyScript()
+   5036   94.0%    Function: ^pbkdf2Sync node:internal/crypto/pbkdf2:68:20
+   4993   99.1%      Function: ^&lt;anonymous&gt; file:///Users/sptm/Documents/Development/test/fastify/express-app.js:28:18
+   4993  100.0%        Function: ^handle /Users/sptm/Documents/Development/test/fastify/node_modules/express/lib/router/layer.js:86:49
+   4888   97.9%          Function: ^next /Users/sptm/Documents/Development/test/fastify/node_modules/express/lib/router/route.js:116:16
+   4888  100.0%            Function: ^dispatch /Users/sptm/Documents/Development/test/fastify/node_modules/express/lib/router/route.js:98:45
+    105    2.1%          LazyCompile: ~next /Users/sptm/Documents/Development/test/fastify/node_modules/express/lib/router/route.js:116:16
+    105  100.0%            Function: ^dispatch /Users/sptm/Documents/Development/test/fastify/node_modules/express/lib/router/route.js:98:45
+    194    3.6%    LazyCompile: ~pbkdf2Sync node:internal/crypto/pbkdf2:68:20
+    173   89.2%      LazyCompile: ~&lt;anonymous&gt; file:///Users/sptm/Documents/Development/test/fastify/express-app.js:28:18
+    107   61.8%        Function: ^handle /Users/sptm/Documents/Development/test/fastify/node_modules/express/lib/router/layer.js:86:49
+    107  100.0%          LazyCompile: ~next /Users/sptm/Documents/Development/test/fastify/node_modules/express/lib/router/route.js:116:16
+    107  100.0%            LazyCompile: ~dispatch /Users/sptm/Documents/Development/test/fastify/node_modules/express/lib/router/route.js:98:45
+     66   38.2%        LazyCompile: ~handle /Users/sptm/Documents/Development/test/fastify/node_modules/express/lib/router/layer.js:86:49
+     66  100.0%          LazyCompile: ~next /Users/sptm/Documents/Development/test/fastify/node_modules/express/lib/router/route.js:116:16
+     66  100.0%            LazyCompile: ~dispatch /Users/sptm/Documents/Development/test/fastify/node_modules/express/lib/router/route.js:98:45
+     21   10.8%      LazyCompile: ~&lt;anonymous&gt; file:///Users/sptm/Documents/Development/test/fastify/express-app.js:9:21
+     21  100.0%        LazyCompile: ~handle /Users/sptm/Documents/Development/test/fastify/node_modules/express/lib/router/layer.js:86:49
+     21  100.0%          LazyCompile: ~next /Users/sptm/Documents/Development/test/fastify/node_modules/express/lib/router/route.js:116:16
+     21  100.0%            LazyCompile: ~dispatch /Users/sptm/Documents/Development/test/fastify/node_modules/express/lib/router/route.js:98:45
+</code></pre></div></div> <h2 id="оптимизация">Оптимизация</h2> <p>А вот отсюда очевидно, что практически все процессорное время отнимает функция <code class="language-plaintext highlighter-rouge">pbkdf2Sync()</code>, которой мы генерируем хэш на основе пароля. К счастью, мы понимаем, что эта функция работает синхронно и блокирует event loop (если не понимаем, о чем речь, читаем вот эту <a href="https://sptm.dev/ru/2023/asynchrony-in-js/">статью об асинхронности</a>). Попробуем использовать асинхронную версию функции <code class="language-plaintext highlighter-rouge">pbkdf2Sync()</code> (<code class="language-plaintext highlighter-rouge">pbkdf2()</code>):</p> <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/auth</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">username</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">username</span> <span class="o">||</span> <span class="dl">''</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">password</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">password</span> <span class="o">||</span> <span class="dl">''</span><span class="p">;</span>
+
+  <span class="nx">username</span> <span class="o">=</span> <span class="nx">username</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">[</span><span class="sr">!@#$%^&amp;*</span><span class="se">]</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">''</span><span class="p">);</span>
+
+  <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">username</span> <span class="o">||</span> <span class="o">!</span><span class="nx">password</span> <span class="o">||</span> <span class="nx">users</span><span class="p">[</span><span class="nx">username</span><span class="p">])</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nf">sendStatus</span><span class="p">(</span><span class="mi">400</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">crypto</span><span class="p">.</span><span class="nf">pbkdf2</span><span class="p">(</span><span class="nx">password</span><span class="p">,</span> <span class="nx">users</span><span class="p">[</span><span class="nx">username</span><span class="p">].</span><span class="nx">salt</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="dl">'</span><span class="s1">sha512</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">hash</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">users</span><span class="p">[</span><span class="nx">username</span><span class="p">].</span><span class="nx">hash</span><span class="p">.</span><span class="nf">toString</span><span class="p">()</span> <span class="o">===</span> <span class="nx">hash</span><span class="p">.</span><span class="nf">toString</span><span class="p">())</span> <span class="p">{</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nf">sendStatus</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nf">sendStatus</span><span class="p">(</span><span class="mi">401</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div> <p>И снова сымитируем нагрузку. Получим такие результаты:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Concurrency Level:      20
+Time taken for tests:   0.073 seconds
+Complete requests:      250
+Failed requests:        0
+Non-2xx responses:      250
+Keep-Alive requests:    250
+Total transferred:      62000 bytes
+HTML transferred:       2750 bytes
+Requests per second:    3444.38 [#/sec] (mean)
+Time per request:       5.807 [ms] (mean)
+Time per request:       0.290 [ms] (mean, across all concurrent requests)
+Transfer rate:          834.19 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1   3.2      0      14
+Processing:     1    4   2.7      3      18
+Waiting:        1    3   2.6      3      16
+Total:          1    4   5.4      3      24
+
+Percentage of the requests served within a certain time (ms)
+  50%      3
+  66%      3
+  75%      3
+  80%      4
+  90%      7
+  95%     22
+  98%     23
+  99%     23
+ 100%     24 (longest request)
+</code></pre></div></div> <p>Сильно лучше, правда? От 38 запросов в секунду мы выросли практически на два порядка, до 3444 запросов. А один запрос теперь занимает около 5 миллисекунд вместо 529.</p> <h2 id="итоги">Итоги</h2> <p>Надеюсь, на этом полностью синтетическом и выдуманном примере мы научились профилировать наши приложения. Ну, и поняли, насколько вредны синхронные блокирующие операции :)</p> </article> <h2>Интересный пост?</h2> <p>Вот еще похожие:</p> <ul> <li><a href="/ru/2023/event-emitter/">Событийно-ориентированная архитектура и Node.js Events</a></li> <li><a href="/ru/2023/reactive-programming/">Реактивное программирование: теория и практика</a></li> <li><a href="/ru/2023/application-testing/">Как и зачем писать тесты?</a></li> <li><a href="/ru/2023/functional-programming/">Функциональное программирование. Что это и зачем?</a></li> <li><a href="/ru/2023/memory-management-in-js/">Управление памятью в JS</a></li> </ul> <script id="diffblog-plugin-script" async="false" src="https://diff.blog/static/js/diffblog_plugin_v1.js"></script> <script>document.getElementById("diffblog-plugin-script").addEventListener("load",function(){DiffBlog("6it6gx3ne5id9kcpizdilzhhypm96tjh2yj8yfjey44gcmpx1y")});</script><div id="disqus_thread" style="max-width: 800px; margin: 0 auto;"> <script type="text/javascript">var disqus_shortname="https-sptm-dev",disqus_identifier="/2023/profiling-nodejs-app",disqus_title="\u041f\u0440\u043e\u0444\u0438\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 Node.js-\u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0439";!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//"+disqus_shortname+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}();</script> <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript" rel="external nofollow noopener" target="_blank">comments powered by Disqus.</a> </noscript> </div> </div> </div> <footer class="sticky-bottom mt-5"> <div class="container">По любым вопросам пишите на <a href="mailto:soslanaldatov@gmail.com">soslanaldatov@gmail.com</a> — я буду рад вам помочь!</div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script> <script defer src="/assets/js/masonry.js" type="text/javascript"></script> <script type="text/javascript">$(function(){$('[data-toggle="tooltip"]').tooltip()});</script> <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4551358636212260" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js"></script> <script defer src="/assets/js/common.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script type="text/javascript">window.MathJax={tex:{tags:"ams"}};</script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script> <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-P58WVSR9JS"></script> <script>function gtag(){window.dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-P58WVSR9JS");</script> <script type="text/javascript">function progressBarSetup(){"max"in document.createElement("progress")?(initializeProgressElement(),$(document).on("scroll",function(){progressBar.attr({value:getCurrentScrollPosition()})}),$(window).on("resize",initializeProgressElement)):(resizeProgressBar(),$(document).on("scroll",resizeProgressBar),$(window).on("resize",resizeProgressBar))}function getCurrentScrollPosition(){return $(window).scrollTop()}function initializeProgressElement(){let e=$("#navbar").outerHeight(!0);$("body").css({"padding-top":e}),$("progress-container").css({"padding-top":e}),progressBar.css({top:e}),progressBar.attr({max:getDistanceToScroll(),value:getCurrentScrollPosition()})}function getDistanceToScroll(){return $(document).height()-$(window).height()}function resizeProgressBar(){progressBar.css({width:getWidthPercentage()+"%"})}function getWidthPercentage(){return getCurrentScrollPosition()/getDistanceToScroll()*100}const progressBar=$("#progress");window.onload=function(){setTimeout(progressBarSetup,50)};</script> </body> </html>
